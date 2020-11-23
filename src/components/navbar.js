@@ -88,7 +88,7 @@ export default function Navbar() {
           >
           {/* <Paper className={classes.paper}>item</Paper> */}
           <Grid item xs={3} >
-          <Divider orientation="vertical" flexItem />
+             <Divider orientation="vertical" flexItem />
           <div className={classes.location}>
           <p >Notre magasin</p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="19.6" height="27.592" viewBox="0 0 19.6 27.592">
