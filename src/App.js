@@ -1,19 +1,14 @@
-import './App.css';
-import Paper from '@material-ui/core/Paper';
-import Navbar from './components/navbar'
-import Nav from "./components/nav"
-// import Login from './components/login'
-import Scrolboutique from "./components/scrolboutique"
-
+import "./App.css";
+import Navbar from "./components/navbar";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Products from './containers/Products'
 function App() {
   return (
     <div className="App">
-      <Paper>
-        <Nav/>
-     {/* <Navbar/> */}
+       <Navbar/>
      {/* <Login/> */}
      {/* <Scrolboutique/> */}
-     </Paper>
+      {/* <Route path="/Products" component={Products} /> */}
     </div>
   );
 }
