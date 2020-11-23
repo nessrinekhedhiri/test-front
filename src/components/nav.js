@@ -1,69 +1,34 @@
 import React from 'react';
-import { fade,makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
 import logo from '../image/Logo.png'
+import search from "../image/Layer -1.png"
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    // border:" 1px solid #b7b7b7 ",
-    //  borderStyle:" outset",
-   },
-  paper: {
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
   location:{
-   display:"flex",
-   justifyContent:"space-between",
-   justifyItems:"center",
-   width:50,
-  //  borderRight: "solid #b7b7b7",
-  },
-  Configurateur:{
-    // display:"flex",
+    display:"flex",
     justifyContent:"space-between",
     justifyItems:"center",
-    // backgroundColor:"#7daf3f",
-    // borderStyle: "groove"
-  },
-  search: {
-    display:'flex',
-    justifyContent:"space-between",
-    // position: 'relative',
-    // borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    // '&:hover': {
-    //   backgroundColor: fade(theme.palette.common.white, 0.25),
-    // },
-    // marginLeft: 0,
-    // width: '100%',
-    // [theme.breakpoints.up('sm')]: {
-    //   marginLeft: theme.spacing(1),
-    //   width: 'auto',
-    // },
-  },
+  
+  
+   },
+
 }));
 
-export default function Navbar() {
+export default function Nav() {
   const classes = useStyles();
 
-  function FormRow() {
-    return (
-      <React.Fragment>
-        <Grid  container
-        direction="row">
-        <Grid item xs={4} >
-          <img src={logo}  style={{textAlign:" center",marginTop: "8%"}}/>
-         
+  return (
+    <div>
+      <Grid container  className={classes.root}>
+      <Grid item md={4}  >
+          <img src={logo}  style={{textAlign:" center",marginTop: "2%"}}/>
         </Grid>
-        
-        <Grid item xs={4}>
-        <Divider orientation="vertical"  />
-          {/* <Paper className={classes.paper}> */}
-          <div className={classes.search}>
+        <Divider orientation="vertical" flexItem />
+        <Grid item md={3}  >
+        <div className={classes.search}>
             <InputBase
               placeholder="Recherche"
               classes={{
@@ -72,24 +37,16 @@ export default function Navbar() {
               }}
               inputProps={{ 'aria-label': 'Recherche' }}
             />
-             <svg id="Composant_2_1" data-name="Composant 2 – 1" xmlns="http://www.w3.org/2000/svg" width="416" height="70" viewBox="0 0 416 70">
+            <img src={search} style={{marginLeft: "41%", marginTop: "3%"}}/>
+             {/* <svg id="Composant_2_1" data-name="Composant 2 – 1" xmlns="http://www.w3.org/2000/svg" width="200" height="70" viewBox="0 0 416 70">
               <path id="Tracé_16" data-name="Tracé 16" d="M22.265,20.721l-3.7-3.688a8.616,8.616,0,0,0,1.838-5.33,8.7,8.7,0,1,0-8.7,8.7,8.616,8.616,0,0,0,5.33-1.838l3.688,3.7a1.092,1.092,0,1,0,1.545-1.545ZM5.176,11.7A6.527,6.527,0,1,1,11.7,18.23,6.527,6.527,0,0,1,5.176,11.7Z" transform="translate(0.263 0.263)" fill="#b7b7b7"/>
-              </svg>
+              </svg> */}
           </div>
-          {/* </Paper> */}
-           <Divider orientation="vertical" flexItem />
         </Grid>
-       
-        <Grid item xs={4} 
-        container
-        direction="row"
-        justify="space-between"
-        alignItems="center"
-          >
-          {/* <Paper className={classes.paper}>item</Paper> */}
-          <Grid item xs={3} >
-          <Divider orientation="vertical" flexItem />
-          <div className={classes.location}>
+        <Divider orientation="vertical" flexItem />
+        <Grid item direction="row" >
+          <Grid >
+        <div className={classes.location}>
           <p >Notre magasin</p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="19.6" height="27.592" viewBox="0 0 19.6 27.592">
                   <g id="_1814106-location-map-marker" data-name="1814106-location-map-marker" transform="translate(-15.2 -8.4)">
@@ -100,11 +57,10 @@ export default function Navbar() {
                   </g>
              </svg>
           </div>
-         
-          </Grid>
           <Divider orientation="vertical" flexItem />
-          <Grid item xs={3} >
-         
+          </Grid>
+  
+          <Grid  >
           <div className={classes.Configurateur}>
           <p >Configurateur</p>
           <svg xmlns="http://www.w3.org/2000/svg" width="31.856" height="21.222" viewBox="0 0 31.856 21.222">
@@ -128,22 +84,10 @@ export default function Navbar() {
 </svg> </div>
            
           </Grid>
-          <Grid item xs={3}>
+          {/* <Grid item xs={3}>
             ddededededede
-          </Grid>
+          </Grid> */}
         </Grid>
-        </Grid>
-      </React.Fragment>
-    );
-  }
-
-  return (
-    <div className={classes.root}>
-      <Grid >
-        <Grid container item xs={12} spacing={3}>
-          <FormRow />
-        </Grid>
-      
       </Grid>
     </div>
   );
