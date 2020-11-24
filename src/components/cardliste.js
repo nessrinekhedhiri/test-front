@@ -2,28 +2,21 @@ import React  from 'react';
 import { fade,makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import img9 from '../image/img-9.png'
-import img5 from '../image/img-5.png'
-import img3 from '../image/img-3.png'
-import img1 from '../image/img-1.png'
-import img6 from '../image/img-6.png'
-import Vert from '../image/élément-6.png'
-
 
  const item=[
-    {image:img1,
+    {image:'/assets/images/img-9.png',
      titre:"Lame commposite"
     },
-    {image:img3,
+    {image:'/assets/images/img-5.png',
      titre:"Lame en bois",
     },
-    {image:img6,
+    {image:'/assets/images/img-3.png',
     titre:"Panneau en bois"
    },
-   {image:img9,
+   {image:'/assets/images/img-1.png',
    titre:"Grille rigide"
    },
-   {image:img5,
+   {image:'/assets/images/img-6.png',
   titre:"Gabion"
    },
  ]
@@ -47,6 +40,13 @@ import Vert from '../image/élément-6.png'
     color:"aliceblue",
     marginTop:"-53%",
   },
+  title:{
+    width:" 135px",
+    height: "45px",
+   color: "#ffffff",
+   fontFamily: "PT Sans",
+   textAlign: "end",
+  }
 }));
 
 export default function ListeCard() {
@@ -62,13 +62,13 @@ export default function ListeCard() {
     <Grid container md={10} noWrap >
   {item.map((el,index)=><div className={classes.card}  key={index} 
   >
-      <img src={show ? el.image  : img5}    
+      <img src={show ? el.image  : "/assets/images/img-6.png"}    
       style={{height:"160",width:"200"}}
        onMouseOut={() => setshow(false)}
        onMouseOver={() =>setshow(true)} 
        />
      <div  className={classes.cardBody}  >
-     <Typography  variant="h5" component="h4">{el.titre}</Typography>
+     <Typography   className={classes.title} variant="h5" component="h4">{el.titre}</Typography>
        </div>
        </div>
   
