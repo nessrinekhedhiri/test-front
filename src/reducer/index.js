@@ -1,5 +1,4 @@
-// import { combineReducers } from "redux";
-// import ThemeReducer from "./ThemeReducer";
-// import AuthReducer from "./AuthReducer";
+import { combineReducers } from "redux";
+import ProductsReducer from "./ProductsReducer";
 
-// export default combineReducers({ theme: ThemeReducer, auth: AuthReducer });
+export default combineReducers({ ProductsReducer });

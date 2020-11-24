@@ -1,14 +1,22 @@
 import React, { useState } from "react";
-import {makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import InputBase from "@material-ui/core/InputBase";
 import Button from "@material-ui/core/Button";
+import Paper from "@material-ui/core/Paper";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import Grid from "@material-ui/core/Grid";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "#ffffff",
-    boxShadow:'none',
-    borderBottom: '1px solid #e2e2e2'
+    boxShadow: "none",
+    // borderBottom: "1px solid #e2e2e2",
+  },
+  toolbar: {
+    borderBottom: "1px solid #e2e2e2",
   },
   logo: {
     width: "412px",
@@ -67,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 0,
     backgroundColor: "#ffffff",
     textTransform: "none",
-    boxShadow:'none',
+    boxShadow: "none",
     "&:hover": {
       backgroundColor: "#ffffff",
     },
@@ -80,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
     borderRight: "1px solid #e2e2e2",
     borderRadius: 0,
     textTransform: "none",
-    boxShadow:'none',
+    boxShadow: "none",
     "&:hover": {
       backgroundColor: "#4d302b",
     },
@@ -97,6 +105,32 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  tabs: {
+    display: "flex",
+    justifyContent: "center",
+    borderTop: "1px solid #e2e2e2",
+    boxShadow: "none",
+  },
+  TabsContainer: {
+    "& .MuiPaper-elevation1": {
+      position: "absolute !important",
+      boxShadow: "none !important"
+    },
+  },
+  tab: {
+    width: "272px",
+    height: "50px",
+    borderRight: "1px solid #e2e2e2",
+    textTransform: "none",
+    color: "#1f1f1f",
+    fontFamily: "PT Sans",
+    fontSize: "16px",
+    fontWeight: "400",
+    fontStyle: "normal",
+    letterSpacing: "normal",
+    lineHeight: "normal",
+    textAlign: "center",
+  },
 }));
 
 export default function NavBar() {
@@ -105,8 +139,8 @@ export default function NavBar() {
   const [hover2, sethover2] = useState(false);
 
   return (
-    <AppBar className={classes.root} position="static">
-      <Toolbar>
+    <AppBar className={classes.root} position="fixed">
+      <Toolbar className={classes.toolbar}>
         <div
           className={classes.logo}
           style={{ width: "412px", height: "70px" }}
@@ -172,6 +206,29 @@ export default function NavBar() {
         </Button>
         <div className={classes.grow} />
       </Toolbar>
+      <Grid container item justify="center" className={classes.TabsContainer}>
+        <Paper square>
+          <Tabs
+            className={classes.tabs}
+            // value={value}
+            elevation={0}
+            indicatorColor="primary"
+            textColor="primary"
+            // onChange={handleChange}
+            aria-label="disabled tabs example"
+            centered
+          >
+            <Tab
+              style={{ borderLeft: "1px solid #e2e2e2" }}
+              className={classes.tab}
+              label="Accueil"
+            />
+            <Tab className={classes.tab} label="Boutique" />
+            <Tab className={classes.tab} label="Nos réalisations" />
+            <Tab className={classes.tab} label="Contactez-nous" />
+          </Tabs>
+        </Paper>
+      </Grid>
     </AppBar>
   );
 }

@@ -1,14 +1,14 @@
 import "./App.css";
 import Navbar from "./components/navbar";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Products from './containers/Products'
+import ProductsContainer from './containers/ProductsContainer'
 function App() {
   return (
     <div className="App">
        <Navbar/>
      {/* <Login/> */}
      {/* <Scrolboutique/> */}
-      {/* <Route path="/Products" component={Products} /> */}
+      <Route path="/products" component={ProductsContainer} />
     </div>
   );
 }
