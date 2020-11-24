@@ -1,5 +1,6 @@
 import "./App.css";
 import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ProductsContainer from './containers/ProductsContainer'
 import Home from "./containers/homePage"
@@ -9,7 +10,7 @@ import Home from "./containers/homePage"
        <Navbar/>
        <Route exact path="/" component={Home} />
       <Route path="/products" component={ProductsContainer} />
-       
+      <Footer />
     </div>
   );
 }

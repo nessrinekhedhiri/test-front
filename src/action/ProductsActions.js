@@ -16,10 +16,10 @@ export const getProduct = () => (dispatch) => {
         payload: res.data,
       })
     )
-    .catch((err) =>
+    .catch(err =>
       dispatch({
         type: GET_PRODUCTS_FAILED,
-        payload: err.response.msg,
+        payload: err,
       })
     );
 };
