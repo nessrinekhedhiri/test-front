@@ -2,16 +2,19 @@ import React, { useEffect } from "react";
 import * as Actions from "./../action";
 import { useDispatch, useSelector } from "react-redux";
 import { fade, makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
+import SettingsComponent from "../components/settingsComponent";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import SideBar from "../components/sideBar";
 import ListProducts from "../components/ListProducts";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     maxWidth: "100%",
+    backgroundColor: "#f8f8f8",
   },
   img: {
     marginTop: "70px",
@@ -48,6 +51,11 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     top: "128px",
   },
+  tabs: {
+    '& .MuiTabs-scroller' :{
+      marginLeft: '-24px'
+    }
+  }
 }));
 
 export default function ProductsContainer(props) {
@@ -80,14 +88,70 @@ export default function ProductsContainer(props) {
           </Typography>
         </Grid>
       </Grid>
-      <Grid container spacing={4} justify="center" style={{ maxWidth: "100%" }}>
+      <Grid
+        container
+        spacing={5}
+        justify="flex-end"
+        style={{ maxWidth: "100%", marginTop: "20px" }}
+      >
         <Grid item xs={2.5}>
           <SideBar />
+          <SettingsComponent />
         </Grid>
         <Grid item xs={9}>
+          <GroupeBtn />
           <ListProducts productsData={productsData} />
         </Grid>
       </Grid>
+    </div>
+  );
+}
+
+function GroupeBtn(props) {
+  const classes = useStyles();
+  const { item } = props;
+
+  return (
+    <div square>
+      <Tabs
+      className={classes.tabs}
+        //value={value}
+        indicatorColor="primary"
+        textColor="primary"
+        //onChange={handleChange}
+        aria-label="disabled tabs example"
+      >
+        <Tab
+          label="Nouveautés"
+          style={{
+            width: "93px",
+            height: "22px",
+            color: "#1f1f1f",
+            fontSize: "15px",
+            fontWeight: "700",
+          }}
+        />
+        <Tab
+          label="Populaire"
+          style={{
+            width: "82px",
+            height: "22px",
+            color: "#6f6c6c",
+            fontSize: "15px",
+            fontWeight: "400",
+          }}
+        />
+        <Tab
+          label="Meilleures Ventes"
+          style={{
+            width: "35%",
+            height: "22px",
+            color: "#6f6c6c",
+            fontSize: "15px",
+            fontWeight: "400",
+          }}
+        />
+      </Tabs>
     </div>
   );
 }

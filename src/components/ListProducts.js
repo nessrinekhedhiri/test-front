@@ -37,6 +37,19 @@ const useStyles = makeStyles({
     textAlign: "left",
     fontWeight: "700",
   },
+  plusproducts: {
+    height: "59px",
+    backgroundColor: "#f2f2f2",
+    width: "95%",
+    color: "#4d302b",
+    fontSize: "16px",
+    fontWeight: "500",
+    boxShadow: "none",
+  },
+  // titlebtn: {
+  //   fontSize: "16px",
+  //   fontWeight: "500",
+  // },
 });
 
 function Product(props) {
@@ -87,14 +100,20 @@ function Product(props) {
 
 export default function ListProducts(props) {
   const { productsData } = props;
+  const classes = useStyles();
   console.log({ productsData });
   return (
-      <Grid container spacing={2}>
-        {productsData.map((el) => (
-          <Grid item xs={3.5} key={el.id}>
-            <Product item={el} />
-          </Grid>
-        ))}
+    <Grid container spacing={2}>
+      {productsData.map((el) => (
+        <Grid item xs={3.5} key={el.id}>
+          <Product item={el} />
+        </Grid>
+      ))}
+      <Grid item xs={11} container direction="row" justify="flex-start">
+        <Button variant="contained" className={classes.plusproducts}>
+          <span className={classes.titlebtn}>Afficher plus</span>
+        </Button>
       </Grid>
+    </Grid>
   );
 }
