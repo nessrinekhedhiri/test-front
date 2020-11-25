@@ -21,13 +21,6 @@ const useStyles = makeStyles((theme) => ({
     widh: "200",
     backgroundRepeat: "no-repeat",
 
-    "&:hover ": {},
-    // [theme.breakpoints.up('md')]: {
-    //   backgroundColor: theme.palette.primary.main,
-    // },
-    // [theme.breakpoints.up('lg')]: {
-    //   backgroundColor: green[500],
-    // },
   },
   cardBody: {
     color: "aliceblue",
@@ -41,13 +34,30 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "end",
   },
 }));
+ function Element(props){
+  const [show, setshow] = React.useState(true);
+  const classes = useStyles();
+   return(
+    <Grid item xs={3.5}  className={classes.card}>
+    <img
+      src={show ? props. el.image : "/assets/images/élément-3.png"}
+      style={{ backgroundColor:show? "#7daf3f":"#7daf3f"}}
+      onMouseOut={() => setshow(true)}
+      onMouseOver={() => setshow(false)}
+    />
+    <div className={classes.cardBody}>
+      <Typography className={classes.title} variant="h5" component="h4">
+        {props.el.titre}
+      </Typography>
+    </div>
+  </Grid>
+   )
+ }
 
 export default function ListeCard() {
   const classes = useStyles();
-  const [show, setshow] = React.useState(true);
-  // const handleBoxToggle = () => {
-  //   setshow(!show);
-  // };
+ 
+  
 
   return (
     <Grid
@@ -57,20 +67,8 @@ export default function ListeCard() {
       justify="center"
       className={classes.root}
     >
-      {item.map((el, index) => (
-        <Grid item xs={3.5} key={index} className={classes.card}>
-          <img
-            src={show ? el.image : "/assets/images/img-6.png"}
-            style={{ height: "160", width: "200" }}
-            onMouseOut={() => setshow(false)}
-            onMouseOver={() => setshow(true)}
-          />
-          <div className={classes.cardBody}>
-            <Typography className={classes.title} variant="h5" component="h4">
-              {el.titre}
-            </Typography>
-          </div>
-        </Grid>
+      {item.map((el, index) => (<Element key={index}  el={el}/>
+        
       ))}
     </Grid>
   );
