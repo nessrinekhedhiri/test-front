@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
   },
   imgRealisation:{
     left: "141px",
-    width:" 970px",
+   // width:" 970px",
     height: "465px",
     postion:"relative !important",
     marginLeft: "23%;",
@@ -100,9 +100,9 @@ export default function Realisation() {
   
 
   return ( 
-    <Grid container direction="row" >
+    <Grid container justify="center">
     
-    <Grid md={2} className={classes.cardBody} >
+    <Grid md={2}>
          <Typography variant="h2" className={classes.title}>Nos realistaion</Typography>
          <Typography  className={classes.soutitre}>Panneau bois</Typography>
 
@@ -119,7 +119,7 @@ export default function Realisation() {
       <img  className={classes.arrow} src="/assets/icons/arrow-left-line.svg"/>
       
       </Grid>
-      <Grid md={6}>
+      <Grid md={9}>
           
           <img className={classes.imgRealisation} src="/assets/images/realisation.png"/>
           <div className={classes.iconNext}>
@@ -131,9 +131,6 @@ export default function Realisation() {
           <img  className={classes.Rectangle} src="/assets/images/Rectangle_20.png"/>
           </div>
    
-      </Grid>
-      <Grid md={1}>
-
       </Grid>
    </Grid>
    )

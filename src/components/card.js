@@ -20,7 +20,8 @@ import Grid from '@material-ui/core/Grid';
     borderStyle: "ridge",
     backgroundColor:"#4d302b",
     margin:"5% 1%",
-    maxWidth: "76%",
+    maxWidth: "85%",
+    height: '170px',
     
     '&:hover': {
       backgroundColor:"#7daf3f" ,
@@ -97,9 +98,8 @@ export default function Card() {
   
 
   return ( 
-    <Grid container direction="row" >
-    <Grid md={1}></Grid>
-    <Grid container md={10} className={classes.cardBody} >
+    <Grid container justify="center" >
+    <Grid container md={12} className={classes.cardBody} >
          <div className={classes.svgIcon}> 
            <img  className={classes.svgIcon2} src="/assets/icons/Tracé_58.svg" />
            <img  className={classes.svgIcon1} src="/assets/icons/Tracé_59.svg" />
@@ -113,8 +113,6 @@ export default function Card() {
       <img  className={classes.arrow} src="/assets/icons/arrow-left-line.svg"/>
       </div>
       
-      </Grid>
-      <Grid md={1}>
       </Grid>
    </Grid>
    )

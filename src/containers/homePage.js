@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div className={classes.root}>
      
-        <Grid container item xs={12} >
+        <Grid container item xs={10} justify="center">
           <img src="/assets/images/644f2a92d0893d909051469bf4dd3f29.png" alt="bg" style={{width:"110%"}} /> 
         </Grid>
       <ListeCard/>  
