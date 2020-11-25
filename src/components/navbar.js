@@ -151,6 +151,12 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#7daf3f",
     },
   },
+  tabContact:{
+    "&:hover": {
+      backgroundColor: "#7daf3f",
+    },
+
+  }
 }));
 
 export default function NavBar() {
@@ -245,11 +251,10 @@ export default function NavBar() {
               label="Accueil"
             />
             <Tab
-              className={classes.tab}
+              className={classes.tabContact}
               label="Boutique"
-              style={{ backgroundColor: !hoverBoutique ? "white" : "#7daf3f" }}
-              onMouseOver={() => sethoverBoutique(true)}
-              onMouseOut={() => sethoverBoutique(false)}
+           
+              onClick={() => sethoverBoutique(!hoverBoutique)}
             />
 
             <Tab className={classes.tab} label="Nos réalisations" />

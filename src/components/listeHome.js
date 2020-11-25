@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState}from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -14,30 +14,36 @@ const data=[
     image:"/assets/images/bg-maron.png",
     titre:"Notice & Installation",
     description:"Avant de commencer, calculez la quantité de bois, de béton et de quincaillerie dont vous aurez besoin.",
+    log:""
     },
     {
         image:"/assets/images/work.png",
         titre:"",
         description:"",
+        logo:"/assets/icons/008-fence.svg"
     },
     {
         image:"/assets/images/f-1.png",
         titre:"",
         description:"",
+        logo:"/assets/icons/008-fence.svg"
     },
     {
         image:"/assets/images/élément-15.png",
         titre:"",
         description:"",
+        logo:"/assets/icons/008-fence.svg"
     },
     {
         image:"/assets/images/view.png",
         titre:"", 
         description:"",
+        logo:"/assets/icons/008-fence.svg"
     },
     {
         image:"/assets/images/c.png",
-        titre:""
+        titre:"",
+        logo:"/assets/icons/008-fence.svg"
     }
 
 ]
@@ -69,13 +75,15 @@ const useStyles = makeStyles({
 function Listework (props) {
   const classes = useStyles();
   const { item } = props;
+  const [hover, sethover] = useState(false); 
 
   return (
   <Grid container item spacing={1}>
-        <Card className={classes.root}>
+        <Card className={classes.root} onMouseEnter={() => sethover(true)} onMouseLeave={() => sethover(false)}>
         <CardContent>
           <div className={classes.FirstBloc}>
            <h2 className={classes.title}>{item.titre}</h2>
+           <img src={item.logo} alt="location" style={{ display:hover?"block":"none",width:"50%",marginLeft:"30%"}}/>
             <p className={classes.description}>{item.description}</p>
           </div>
             <CardMedia 
@@ -86,6 +94,7 @@ function Listework (props) {
               image={item.image}
               title="Contemplative Reptile"
             />
+              
           </CardContent>
         </Card>
     </Grid>

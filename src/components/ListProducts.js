@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState}from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -9,6 +9,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import ProductsContainer from "../containers/ProductsContainer";
+
 
 const useStyles = makeStyles({
   root: {
@@ -36,6 +37,11 @@ const useStyles = makeStyles({
     lineHeight: "normal",
     textAlign: "left",
     fontWeight: "700",
+    // "&:hover": {
+    //   color: "#4d302b",
+    //   left: "0",
+    //   transition:" 1s ease-in",
+    // },
   },
   plusproducts: {
     height: "59px",
@@ -46,34 +52,37 @@ const useStyles = makeStyles({
     fontWeight: "500",
     boxShadow: "none",
   },
-  // titlebtn: {
-  //   fontSize: "16px",
-  //   fontWeight: "500",
-  // },
+  detailles:{
+    display:"flex",
+    justifyContent:"space-between",
+    color:"#7daf3f",
+  }
 });
 
 function Product(props) {
   const classes = useStyles();
-  const { item } = props;
-
+  const [hover, sethover] = useState(false); 
+  
+  
   return (
     <Card className={classes.root}>
-      <CardActionArea>
+      <CardActionArea onMouseEnter={() => sethover(true)} onMouseLeave={() => sethover(false)} >
         <CardMedia
           component="img"
           alt="Contemplative Reptile"
           height="140"
-          image={item.picture}
+          image={props.item.picture}
           title="Contemplative Reptile"
         />
-        <CardContent>
+        <CardContent >
           <Typography
             className={classes.productName}
             variant="body2"
             color="textSecondary"
             component="h5"
+            style={{marginTop:hover ? "-15%" : "0"}}
           >
-            {item.product_name}
+            {props.item.product_name}
           </Typography>
           <Typography
             sx={{ fontWeight: "bold" }}
@@ -81,9 +90,22 @@ function Product(props) {
             variant="body2"
             color="textSecondary"
             component="h5"
+            style={{color:hover ?   "#4d302b":"#b7b7b7"}} 
           >
-            {item.price}
+            {props.item.price}
           </Typography>
+          <div className={classes.detailles} >
+          <Typography
+            sx={{ fontWeight: "bold" }}
+           
+            color="#7daf3f"
+            component="h2"
+            style={{display:hover ? "block" : "none"}} 
+          >
+              Voir Plus
+          </Typography>
+          <img  src="/assets/images/arrow-left-line-5.png"  style={{display:hover ? "block" : "none"}} />
+          </div>
         </CardContent>
       </CardActionArea>
       {/* <CardActions>
