@@ -80,7 +80,7 @@ function Product(props) {
             variant="body2"
             color="textSecondary"
             component="h5"
-            style={{marginTop:hover ? "-15%" : "0"}}
+            style={{marginTop:hover ? "-15%" : "0", color:hover ? "white" : "black"}}
           >
             {props.item.product_name}
           </Typography>
@@ -108,14 +108,6 @@ function Product(props) {
           </div>
         </CardContent>
       </CardActionArea>
-      {/* <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions> */}
     </Card>
   );
 }

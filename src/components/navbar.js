@@ -10,6 +10,36 @@ import Tab from "@material-ui/core/Tab";
 import Grid from "@material-ui/core/Grid";
 import Login from "../components/login";
 import Scrolboutique from "../components/scrolboutique";
+import Box from '@material-ui/core/Box';
+import Popover from '@material-ui/core/Popover';
+import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
+{/* <PopupState variant="popover" popupId="demo-popup-popover">
+{(popupState) => (
+  <div>
+    <Tab
+              className={classes.tabBoutique}
+              label="Boutique"
+              onClick={() => sethoverBoutique(!hoverBoutique)}
+              {...bindTrigger(popupState)
+            />
+    <Popover
+      {...bindPopover(popupState)}
+      anchorOrigin={{
+        vertical: 'bottom',
+        horizontal: 'center',
+      }}
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'center',
+      }}
+    >
+      <Box p={2}>
+        <Scrolboutique />
+      </Box>
+    </Popover>
+  </div>
+)}
+</PopupState> */}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -111,6 +141,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     borderTop: "1px solid #e2e2e2",
+    borderBottom: "1px solid #e2e2e2",
     boxShadow: "none",
   },
   TabsContainer: {
@@ -151,7 +182,20 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#7daf3f",
     },
   },
-  tabContact:{
+  tabBoutique:{
+    width: "272px",
+    height: "50px",
+    borderRight: "1px solid #e2e2e2",
+    textTransform: "none",
+    color: "#1f1f1f",
+    fontFamily: "PT Sans",
+    fontSize: "16px",
+    fontWeight: "400",
+    fontStyle: "normal",
+    letterSpacing: "normal",
+    lineHeight: "normal",
+    textAlign: "center",
+    position:"relative",
     "&:hover": {
       backgroundColor: "#7daf3f",
     },
@@ -250,32 +294,63 @@ export default function NavBar() {
               className={classes.tab}
               label="Accueil"
             />
+            <PopupState variant="popover" popupId="demo-popup-popover">
+               {(popupState) => (
+                   <div>
             <Tab
-              className={classes.tabContact}
+              className={classes.tabBoutique}
               label="Boutique"
-           
               onClick={() => sethoverBoutique(!hoverBoutique)}
-            />
+                    {...bindTrigger(popupState)}
+                  />
+          <Popover
+            {...bindPopover(popupState)}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'center',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'center',
+            }}
+          >
+              <Scrolboutique />
+          </Popover>
+        </div>
+             )}
+         </PopupState>
 
             <Tab className={classes.tab} label="Nos réalisations" />
-            <Tab
+           
+              <PopupState variant="popover" popupId="demo-popup-popover">
+               {(popupState) => (
+                   <div>
+                      <Tab
               className={classes.contact}
               label="Contactez-nous"
               onClick={() => sethoverContact(!hoverContact)}
+              {...bindTrigger(popupState)}
             />
-          </Tabs>
-          {hoverContact && (
-            <div style={{ marginLeft: "78%" }}>
+            
+          <Popover
+            {...bindPopover(popupState)}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'center',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'center',
+            }}
+          >
               <Login />
-            </div>
-          )}
+          </Popover>
+        </div>
+             )}
+         </PopupState> 
+          </Tabs>
         </Paper>
       </Grid>
-      {hoverBoutique && (
-        <div style={{ margin: "8% 34%", position: "absolute" }}>
-          <Scrolboutique />
-        </div>
-      )}
     </AppBar>
   );
 }

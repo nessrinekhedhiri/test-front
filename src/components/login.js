@@ -13,19 +13,23 @@ import FormControl from '@material-ui/core/FormControl';
 
 
 const useStyles = makeStyles((theme) => ({
-    card: {
-      '& > *': {
-        margin: theme.spacing(1),
-        width: '25ch',
-        height:'13ch'
-      },
-    },
+    // card: {
+    //   '& > *': {
+    //     margin: theme.spacing(1),
+    //     width: '25ch',
+    //     height:'1ch'
+    //   },
+    // },
     root: {
-        maxWidth: 216,
+        maxWidth: 200,
+          top: '19px',
+          left: '-56px',
+          width: "268px",
+          height: "229%",
         
       },
       media: {
-        height: 140,
+        height: 100,
       },
       header:{
         marginTop: "-84px",
@@ -33,9 +37,9 @@ const useStyles = makeStyles((theme) => ({
         position:"absolute",
         color:"white"
       },
-      margin: {
-        marginTop:"-25%",
-      },
+      // margin: {
+      //   marginTop:"-25%",
+      // },
   }));
 
 
@@ -54,11 +58,10 @@ export default function Login() {
              Coordonnées & Map
           </Typography>
         <CardContent>
-         
-          <Typography variant="body2"  component="p">
+          <p>
                    Hey! Pour toute informations ou suggestions,
                    Merci de remplir le formulaire suivant
-          </Typography>
+          </p>
         </CardContent>
         <form className={classes.card} noValidate autoComplete="off">
             <TextField id="standard-basic" label="Nom & Prénom" />
@@ -71,8 +74,8 @@ export default function Login() {
            </FormControl>
         </form>
       </CardActionArea>
-      <CardActions  style={{borderTop: "solid #b7b7b7"}}>
-          <Button   style={{textAlign:'center', margin: "5px 25px 26px 70px"}}>
+      <CardActions  style={{borderTop: "solid #b7b7b7" ,backgroundColor:"#7daf3f"}}>
+          <Button   style={{textAlign:'center',color:"aliceblue"}}>
              Contactez-nous
           </Button>
       </CardActions>

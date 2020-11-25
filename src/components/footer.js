@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    left:"0",
+    left: "0",
   },
   line: {
     width: "1088px",
@@ -96,6 +96,7 @@ export default function Footer() {
         direction="row"
         justify="center"
         alignItems="center"
+        style={{ padding: "0px 114px" }}
       >
         <Grid item xs={3}>
           <img src="/assets/images/Logo.png" className={classes.logo2} />

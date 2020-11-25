@@ -21,7 +21,7 @@ import Grid from '@material-ui/core/Grid';
     backgroundColor:"#4d302b",
     margin:"5% 1%",
     maxWidth: "85%",
-    height: '170px',
+    height: '162px',
     
     '&:hover': {
       backgroundColor:"#7daf3f" ,
@@ -33,12 +33,11 @@ import Grid from '@material-ui/core/Grid';
   },
  lorem:{
     position: "absolute",
-    top: "606px",
+    top: "658px",
     left: "404px",
     width: "669px",
     height:" 52px",
     color: "#ffffff",
-    fontFamily: "PT Sans",
     fontSize:" 20px",
     fontWeight:"400",
     fontStyle: "normal",
@@ -51,12 +50,11 @@ import Grid from '@material-ui/core/Grid';
   },
 title:{
 position:" absolute",
-top:" 553px",
+top:" 575px",
 left:" 404px",
 width:" 334px",
 height:" 44px",
 color:" #ffffff",
-fontFamily:" PT Sans",
 fontSize:" 33px",
 fontWeight:" 700",
 fontStyle:" normal",
