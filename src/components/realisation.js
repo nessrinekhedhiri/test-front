@@ -103,10 +103,6 @@ export default function Realisation() {
     <Grid container direction="row" >
     
     <Grid md={2} className={classes.cardBody} >
-         {/* <div className={classes.svgIcon}> 
-           <img  className={classes.svgIcon2} src="/assets/icons/Tracé_58.svg" />
-           <img  className={classes.svgIcon1} src="/assets/icons/Tracé_59.svg" />
-         </div>     */}
          <Typography variant="h2" className={classes.title}>Nos realistaion</Typography>
          <Typography  className={classes.soutitre}>Panneau bois</Typography>
 
@@ -117,12 +113,6 @@ export default function Realisation() {
                magna aliquyam erat, sed diam voluptua. 
              At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasdundefined</Typography>
       <div className={classes.body}>
-         {/* {/* <img src="/assets/images/bg-1.png" /> */}
-       {/* <div className={classes.configuration}>    
-      <h2 className={classes.title}>Configurez votre espace</h2>
-      <p className={classes.lorem}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidu.</p>
-      </div> */}
-    
       </div>
       <img  style={{position:"absolute",margin:"-6% 11%" ,zIndex:"-10"}} src="/assets/images/tracé_24.png" /> 
     

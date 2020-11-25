@@ -3,9 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
-import Typography from '@material-ui/core/Typography'
-import CardActionArea from '@material-ui/core/CardActionArea';
-// import CardActions from '@material-ui/core/CardActions';
+
  import CardContent from '@material-ui/core/CardContent';
 import Magazin from '../components/magazin'
 
@@ -103,7 +101,7 @@ export default function ListeContainer(props) {
       spacing={2}>
            
         {data.map((el,index) => (
-          <Grid item container md={4} key={index} spacing={10}>
+          <Grid item container md={4}  sx={6} key={index} spacing={10}>
             <Listework item={el} />
           </Grid>
         ))}

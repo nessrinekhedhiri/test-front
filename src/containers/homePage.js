@@ -10,17 +10,13 @@ import ListeContainer from '../components/listeHome'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      flexGrow: 1,
+      // flexGrow: 1,
       padding: theme.spacing(2),
     },
-  //   paper: {
-  //     // padding: theme.spacing(1),
-  //     textAlign: 'center',
-  //     color: theme.palette.text.secondary,
-  //   },
-  blocContainer:{
-    margin:"11% 5% 1%"
-  }
+
+  // blocContainer:{
+  //   margin:"11% 5% 1%"
+  // }
 }));
 
 export default function Home() {

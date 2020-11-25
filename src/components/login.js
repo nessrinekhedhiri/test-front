@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
-import image from  "../image/img accueil-1.png"
+
 
 const useStyles = makeStyles((theme) => ({
     card: {
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
       },
     },
     root: {
-        maxWidth: 345,
+        maxWidth: 216,
         
       },
       media: {
@@ -47,7 +47,7 @@ export default function Login() {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={image}
+          image="/assets/images/img accueil-1.png" 
           title="Contemplative Reptile"
         />
         <Typography  variant="h5" component="h2" className={classes.header}>

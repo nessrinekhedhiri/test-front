@@ -8,6 +8,8 @@ import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Grid from "@material-ui/core/Grid";
+import Login from '../components/login';
+import  Scrolboutique from '../components/scrolboutique'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -137,7 +139,8 @@ export default function NavBar() {
   const classes = useStyles();
   const [hover, sethover] = useState(false);
   const [hover2, sethover2] = useState(false);
-
+  const  [hoverContact,sethoverContact]=useState(false)
+  const [hoverBoutique,sethoverBoutique]=useState(false)
   return (
     <AppBar className={classes.root} position="fixed">
       <Toolbar className={classes.toolbar}>
@@ -223,12 +226,23 @@ export default function NavBar() {
               className={classes.tab}
               label="Accueil"
             />
-            <Tab className={classes.tab} label="Boutique" />
+            <Tab className={classes.tab} label="Boutique" 
+            style={{backgroundColor:!hoverBoutique?'white':'#7daf3f'}}
+            onMouseOver={() => sethoverBoutique(true)}
+            onMouseOut={() => sethoverBoutique(false)}
+            />
+
             <Tab className={classes.tab} label="Nos réalisations" />
-            <Tab className={classes.tab} label="Contactez-nous" />
+            <Tab className={classes.tab} label="Contactez-nous" 
+            style={{backgroundColor:!hoverContact?'white':'#7daf3f'}}
+            onMouseOver={() => sethoverContact(true)}
+            onMouseOut={() => sethoverContact(false)} />
           </Tabs>
+          {hoverContact && <div style={{marginLeft:"78%"}}><Login/></div> }
         </Paper>
       </Grid>
+      {hoverBoutique && <div style={{ margin: "8% 34%",position:"absolute"}}><Scrolboutique/></div> } 
+     
     </AppBar>
   );
 }

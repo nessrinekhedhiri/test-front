@@ -10,7 +10,7 @@ import Home from "./containers/homePage"
        <Navbar/>
        <Route exact path="/" component={Home} />
       <Route path="/products" component={ProductsContainer} />
-      <Footer />
+       <Footer />
     </div>
   );
 }

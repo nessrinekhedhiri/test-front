@@ -9,7 +9,6 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card'
 
-// import SearchIcon from '@material-ui/icons/Search';
 
 const useStyles = makeStyles((theme) => ({
     magazinContainer: {
@@ -20,22 +19,25 @@ const useStyles = makeStyles((theme) => ({
         height: 169,
       },
     imageMagazime:{
-           position: "absolute",
+          //  position: "absolute",
             top: "2068px",
             left: "0",
-            width: "800px",
-            height: "356px",
+            width: "902px",
+            height: "356px",                         
+            marginLeft: "-41%",
+            padding: "39%",
     },
-    root:{
+    root:{ 
         position: "absolute",
-        top: "2146px",
-        left: "633px",
+        top: "2177px",
+        left: "737px",
         width: "664px",
         height: "257px",
+        // position:"relative"
     },
     title:{
-         top: "2090px",
-        left: "832px",
+         top: "2136px",
+         left:" 937px",
         width: "206px",
         height: "44px",
         color: "#1f1f1f",

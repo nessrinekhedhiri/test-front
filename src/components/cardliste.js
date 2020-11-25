@@ -32,9 +32,13 @@ import Grid from '@material-ui/core/Grid';
     backgroundRepeat: "no-repeat",
     
     "&:hover ":{
-    
-      // transform:" scale(1.5)",
-    }
+    },
+    // [theme.breakpoints.up('md')]: {
+    //   backgroundColor: theme.palette.primary.main,
+    // },
+    // [theme.breakpoints.up('lg')]: {
+    //   backgroundColor: green[500],
+    // },
   },
   cardBody:{
     color:"aliceblue",
