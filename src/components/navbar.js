@@ -306,7 +306,7 @@ export default function NavBar() {
           <Popover
             {...bindPopover(popupState)}
             anchorOrigin={{
-              vertical: 'top',
+              vertical: 'bottom',
               horizontal: 'center',
             }}
             transformOrigin={{
@@ -335,7 +335,7 @@ export default function NavBar() {
           <Popover
             {...bindPopover(popupState)}
             anchorOrigin={{
-              vertical: 'top',
+              vertical: 'bottom',
               horizontal: 'center',
             }}
             transformOrigin={{
