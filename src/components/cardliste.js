@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     <Grid item xs={3.5}  className={classes.card}>
     <img
       src={show ? props. el.image : "/assets/images/élément-3.png"}
-      style={{ backgroundColor:show? "#7daf3f":"#7daf3f"}}
+      style={{ backgroundColor:show? "#7daf3f":"#7daf3f"} }
       onMouseOut={() => setshow(true)}
       onMouseOver={() => setshow(false)}
     />

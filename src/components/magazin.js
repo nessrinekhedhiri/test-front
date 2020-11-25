@@ -15,8 +15,8 @@ const useStyles = makeStyles((theme) => ({
   },
   imageMagazime: {
     //  position: "absolute",
-    top: "2068px",
-    left: "0",
+    // top: "2068px",
+    // left: "0",
     marginLeft: "-41%",
   },
   root: {
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     top: "190px",
     left: "542px",
     width: "656px",
-    height: "385px",
+    // height: "385px",
     border: "1px solid #e2e2e2",
     backgroundColor: "#ffffff",
     // position:"relative"
@@ -36,13 +36,20 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "30px",
     fontWeight: "700",
   },
+  detailles:{
+    display:"flex",
+    justifyContent:"space-around",
+    color:"#7daf3f",
+  }
 }));
 
 export default function Magazin() {
   const classes = useStyles();
+  const [hover, sethover] = useState(false); 
 
   return (
-    <Grid container style={{ position: "relative", padding: "130px 0px" }}>
+    <Grid container style={{ position: "relative", padding: "130px 0px" }} 
+   >
       <Grid item xs={6}>
         <img
           className={classes.imageMagazime}
@@ -52,7 +59,7 @@ export default function Magazin() {
         />
       </Grid>
       <Grid item xs={6}>
-        <Grid container>
+        <Grid container  onMouseEnter={() => sethover(true)} onMouseLeave={() => sethover(false)} >
           <Typography
             variant="h4"
             component="h4"
@@ -66,7 +73,7 @@ export default function Magazin() {
               <CardMedia
                 component="img"
                 alt="Contemplative Reptile"
-                height="140"
+                // height="140"
                 title="Contemplative Reptile"
                 className={classes.media}
                 image="/assets/images/image-1.png"
@@ -80,9 +87,18 @@ export default function Magazin() {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Button size="small" color="primary">
-                Learn More
-              </Button>
+            <div className={classes.detailles} >
+          <Typography
+            sx={{ fontWeight: "bold" }}
+           
+            color="#7daf3f"
+            component="h2"
+            style={{display:hover ? "block" : "none", fontSize:"80%"}} 
+          >
+              Voir Plus
+          </Typography>
+        
+          </div>
             </CardActions>
           </Card>
         </Grid>
