@@ -8,31 +8,42 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 const useStyles = makeStyles((theme) => ({
   root: {
-    top: '19px',
-    left: '-56px',
+    top: "19px",
+    left: "-56px",
     width: "268px",
-    height: "229px",
+    height: "310px",
   },
   media: {
-    height: 170,
+    height: "250px",
   },
 
   liste: {
-    width: "223px",
+    width: "268px",
+    height: "310px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
     listStyle: " none",
-    position: 'absolute',
-    marginTop: '-150px',
+    position: "absolute",
+    marginTop: "-283px",
     // marginRight: "-28%",
     color: "aliceblue",
   },
   button: {
     padding: "4% 0% 4% 33%",
     color: "aliceblue",
+    width: "100%",
+    display: "flex",
+    justifyContent: "flex-start",
+  },
+  item: {
+    width: "269px",
+    height: "49px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
 }));
 
@@ -49,13 +60,19 @@ export default function Scrolboutique() {
         />
       </CardActionArea>
       <ul className={classes.liste}>
-        <li> Lame commposite</li>
-        <li> Lame en bois </li>
+        <li className={classes.item}> Lame commposite</li>
+        <li className={classes.item}> Lame en bois </li>
         <Link to="/products">
-          <li> Panneau en bois</li>
+          <li
+            className={classes.item}
+            style={{ backgroundColor: "#4d302b", color: "white" }}
+          >
+            {" "}
+            Panneau en bois
+          </li>
         </Link>
-        <li>Grille rigide</li>
-        <li>Gabion</li>
+        <li className={classes.item}>Grille rigide</li>
+        <li className={classes.item}>Gabion</li>
       </ul>
       <CardActions style={{ background: "#7daf3f" }}>
         <Button className={classes.button}>Boutique</Button>

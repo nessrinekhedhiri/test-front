@@ -10,10 +10,11 @@ import Tab from "@material-ui/core/Tab";
 import Grid from "@material-ui/core/Grid";
 import Login from "../components/login";
 import Scrolboutique from "../components/scrolboutique";
-import Box from '@material-ui/core/Box';
-import Popover from '@material-ui/core/Popover';
-import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
-{/* <PopupState variant="popover" popupId="demo-popup-popover">
+import Box from "@material-ui/core/Box";
+import Popover from "@material-ui/core/Popover";
+import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
+{
+  /* <PopupState variant="popover" popupId="demo-popup-popover">
 {(popupState) => (
   <div>
     <Tab
@@ -39,7 +40,8 @@ import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
     </Popover>
   </div>
 )}
-</PopupState> */}
+</PopupState> */
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -182,7 +184,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#7daf3f",
     },
   },
-  tabBoutique:{
+  tabBoutique: {
     width: "272px",
     height: "50px",
     borderRight: "1px solid #e2e2e2",
@@ -195,12 +197,11 @@ const useStyles = makeStyles((theme) => ({
     letterSpacing: "normal",
     lineHeight: "normal",
     textAlign: "center",
-    position:"relative",
+    position: "relative",
     "&:hover": {
       backgroundColor: "#7daf3f",
     },
-
-  }
+  },
 }));
 
 export default function NavBar() {
@@ -295,59 +296,59 @@ export default function NavBar() {
               label="Accueil"
             />
             <PopupState variant="popover" popupId="demo-popup-popover">
-               {(popupState) => (
-                   <div>
-            <Tab
-              className={classes.tabBoutique}
-              label="Boutique"
-              onClick={() => sethoverBoutique(!hoverBoutique)}
+              {(popupState) => (
+                <div>
+                  <Tab
+                    className={classes.tabBoutique}
+                    label="Boutique"
+                    onClick={() => sethoverBoutique(!hoverBoutique)}
                     {...bindTrigger(popupState)}
                   />
-          <Popover
-            {...bindPopover(popupState)}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'center',
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'center',
-            }}
-          >
-              <Scrolboutique />
-          </Popover>
-        </div>
-             )}
-         </PopupState>
+                  <Popover
+                    {...bindPopover(popupState)}
+                    anchorOrigin={{
+                      vertical: "bottom",
+                      horizontal: "left",
+                    }}
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "left",
+                    }}
+                  >
+                    <Scrolboutique />
+                  </Popover>
+                </div>
+              )}
+            </PopupState>
 
             <Tab className={classes.tab} label="Nos réalisations" />
-           
-              <PopupState variant="popover" popupId="demo-popup-popover">
-               {(popupState) => (
-                   <div>
-                      <Tab
-              className={classes.contact}
-              label="Contactez-nous"
-              onClick={() => sethoverContact(!hoverContact)}
-              {...bindTrigger(popupState)}
-            />
-            
-          <Popover
-            {...bindPopover(popupState)}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'center',
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'center',
-            }}
-          >
-              <Login />
-          </Popover>
-        </div>
-             )}
-         </PopupState> 
+
+            <PopupState variant="popover" popupId="demo-popup-popover">
+              {(popupState) => (
+                <div>
+                  <Tab
+                    className={classes.contact}
+                    label="Contactez-nous"
+                    onClick={() => sethoverContact(!hoverContact)}
+                    {...bindTrigger(popupState)}
+                  />
+
+                  <Popover
+                    {...bindPopover(popupState)}
+                    anchorOrigin={{
+                      vertical: "bottom",
+                      horizontal: "left",
+                    }}
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "left",
+                    }}
+                  >
+                    <Login />
+                  </Popover>
+                </div>
+              )}
+            </PopupState>
           </Tabs>
         </Paper>
       </Grid>
