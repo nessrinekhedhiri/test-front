@@ -121,7 +121,7 @@ export default function Realisation() {
       </Grid>
       <Grid md={9}>
           
-          <img className={classes.imgRealisation} src="/assets/images/realisation.png"/>
+          <img className={classes.imgRealisation} src="/assets/images/realisation.png" />
           <div className={classes.iconNext}>
               <div style={{display:"flex",justifyContent:'space-between' ,width:"7%",margin:"-56px 178px", position:'absolute'}}>
               <img  src="/assets/icons/tracé_20.svg"/>
