@@ -21,7 +21,7 @@ import Grid from '@material-ui/core/Grid';
     backgroundColor:"#4d302b",
     margin:"5% 1%",
     maxWidth: "85%",
-    height: '170px',
+    height: '200px',
     
     '&:hover': {
       backgroundColor:"#7daf3f" ,
@@ -33,7 +33,7 @@ import Grid from '@material-ui/core/Grid';
   },
  lorem:{
     position: "absolute",
-    top: "606px",
+    top: "631px",
     left: "404px",
     width: "669px",
     height:" 52px",
