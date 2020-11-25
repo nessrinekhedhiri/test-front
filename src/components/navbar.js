@@ -111,6 +111,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     borderTop: "1px solid #e2e2e2",
+    borderBottom: "1px solid #e2e2e2",
     boxShadow: "none",
   },
   TabsContainer: {
@@ -152,6 +153,18 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   tabContact:{
+    width: "272px",
+    height: "50px",
+    borderRight: "1px solid #e2e2e2",
+    textTransform: "none",
+    color: "#1f1f1f",
+    fontFamily: "PT Sans",
+    fontSize: "16px",
+    fontWeight: "400",
+    fontStyle: "normal",
+    letterSpacing: "normal",
+    lineHeight: "normal",
+    textAlign: "center",
     "&:hover": {
       backgroundColor: "#7daf3f",
     },
@@ -253,7 +266,6 @@ export default function NavBar() {
             <Tab
               className={classes.tabContact}
               label="Boutique"
-           
               onClick={() => sethoverBoutique(!hoverBoutique)}
             />
 

@@ -83,7 +83,7 @@ function Listework (props) {
         <CardContent>
           <div className={classes.FirstBloc}>
            <h2 className={classes.title}>{item.titre}</h2>
-           <img src={item.logo} alt="location" style={{ display:hover?"block":"none",width:"50%",marginLeft:"30%"}}/>
+           <img src={item.logo} alt="location" style={{ width:"50%",marginLeft:"30%"}}/>
             <p className={classes.description}>{item.description}</p>
           </div>
             <CardMedia 
