@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState}from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -46,6 +46,11 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "700",
         position:"absolute",
         zIndex:"1",
+      },
+      detailles:{
+        display:"flex",
+        justifyContent:"space-between",
+        color:"#7daf3f",
       }
   
   }
@@ -54,9 +59,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Magazin() {
   const classes = useStyles()
+  const [hover, sethover] = useState(false); 
 
   return (<div className={classes.magazinContainer}>
-           <Grid container >
+           <Grid container onMouseEnter={() => sethover(true)} onMouseLeave={() => sethover(false)} >
             <Grid item xs={6}>
             <Typography variant="h4"  component="h4" className={classes.title}>
                 Notre magasin
@@ -74,18 +80,25 @@ export default function Magazin() {
                     className={classes.media}
                     image="/assets/images/image-1.png"
                     />
-                    <CardContent>
-                    <Typography variant="body2" color="textSecondary" component="p">
+                    <CardContent style={{height:"20vh"}}>
+                    <Typography color="textSecondary" component="p">
                     Dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
                     </Typography>
+                    <div className={classes.detailles} >
+                      <Typography
+                        sx={{ fontWeight: "bold" }}
+                      
+                        color="#7daf3f"
+                        component="h2"
+                        style={{display:hover ? "block" : "none"}} 
+                      >
+                          EN SAVOIR PLUS
+                      </Typography>
+                      <img  src="/assets/images/arrow-left-line-5.png"  style={{display:hover ? "block" : "none"}} />
+                     </div>
                     </CardContent>
                 </CardActionArea>
-                <CardActions>
-                
-                    <Button size="small" color="primary">
-                    Learn More
-                    </Button>
-                </CardActions>
+              
                 </Card>                
             </Grid>
             <Grid item xs={2}>   
